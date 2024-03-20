@@ -1,0 +1,47 @@
+/* Do not forget to add fonts */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    background-color: #FFFDF2;
+}
+
+/* .background{
+    background-image: url(../../src/pictures/background3.png),
+                      url(../../src/pictures/background1.png);
+    background-repeat: no-repeat, repeat;
+    background-image: url(../../src/pictures/background1.png);
+    -516px
+}  */
+
+.background {
+    position:relative;
+}
+
+.content {
+    position:relative;
+    z-index:2;
+}
+
+.background::after {
+    position:absolute;
+    top:-516px;
+    background:url(../../src/pictures/background1.png);
+    content:'';
+    width:100%;
+    height: calc(100% + 516px);
+    z-index:0;
+}
+
+.navbar{
+    height: 120px;
+    background-color: #DE0000;
+}
