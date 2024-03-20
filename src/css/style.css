@@ -1,4 +1,8 @@
-/* Do not forget to add fonts */
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf),
+         url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+}
 
 *{
     margin: 0;
@@ -12,6 +16,7 @@ html, body{
 
 body{
     background-color: #FFFDF2;
+    font-family: 'Open Sans';
 }
 
 /* .background{
