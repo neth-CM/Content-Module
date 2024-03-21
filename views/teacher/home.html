@@ -81,8 +81,7 @@
 
         <div id="post-modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
+                test
             </div>
         </div>
 
@@ -101,13 +100,14 @@
             });
 
             $('#edit-button').click(function(){
-                console.log("edit button clicked");
                 $('#post-modal').show();
+                $('body').css('overflow', "hidden");
             })
 
             window.onclick = function(event) {
                 if (event.target.id == 'post-modal') {
                     $("#post-modal").hide();
+                    $('body').css('overflow', "auto");
                 }
             }
         </script>

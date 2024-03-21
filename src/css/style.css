@@ -54,7 +54,7 @@ body{
     content: '';
     width: 100%;
     height: calc(100% + 516px);
-    z-index: 0;
+    z-index: 1;
 }
 
 .details{
