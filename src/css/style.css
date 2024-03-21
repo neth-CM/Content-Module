@@ -19,6 +19,16 @@ body{
     font-family: 'Open Sans';
 }
 
+.navbar{
+    height: 120px;
+    background-color: #DE0000;
+}
+
+
+/*----------------------------------------*/
+/*-------------- Containers --------------*/
+/*----------------------------------------*/
+
 /* .background{
     background-image: url(../../src/pictures/background3.png),
                       url(../../src/pictures/background1.png);
@@ -28,25 +38,29 @@ body{
 }  */
 
 .background {
-    position:relative;
+    position: relative;
+    min-height: 100vh;
 }
 
 .content {
-    position:relative;
-    z-index:2;
+    position: relative;
+    z-index: 2;
 }
 
 .background::after {
-    position:absolute;
-    top:-516px;
-    background:url(../../src/pictures/background1.png);
-    content:'';
-    width:100%;
+    position: absolute;
+    top: -516px;
+    background: url(../../src/pictures/background1.png);
+    content: '';
+    width: 100%;
     height: calc(100% + 516px);
-    z-index:0;
+    z-index: 0;
 }
 
-.navbar{
-    height: 120px;
-    background-color: #DE0000;
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0 21px;
 }

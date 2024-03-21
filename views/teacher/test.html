@@ -6,13 +6,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Content Module - Student</title>
+        <title>Content Module - Teacher</title>
 
         <link rel="stylesheet" href="../../src/css/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="../../src/css/fontawesome/css/fontawesome.min.css">
         <link href="../../src/css/tailwind/style.css" rel="stylesheet">
         <link href="../../src/css/style.css" rel="stylesheet">
         <link href="../../src/css/style-post.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     </head>
     <body class="">
         <div class="background">
@@ -21,8 +22,8 @@
                     <a href="../index.html">Go Back</a>
                 </nav>
 
+                <!-- ADMIN POST -->
                 <div class="details">
-                    <!-- ADMIN POST -->
                     <div class="post">
                         <div class="poster-details">
                             <img src="../../src/pictures/john.jpg" alt="image" srcset="">
@@ -44,6 +45,10 @@
                         </div>
                     </div>
 
+                    <select name="" id="">
+                        <option value="Test">test</option>
+                    </select>
+
                     <!-- TEACHER POST -->
                     <div class="post">
                         <div class="poster-details">
@@ -52,6 +57,9 @@
                                 <div class="font-bold">Tricia Diaz</div>
                                 <p>Department Office</p>
                             </div>
+                            <button class="three-dot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
                         </div>
                         <div class="post-title"></div>
                         <div class="post-content">
@@ -68,6 +76,39 @@
                 </div>
             </div>
         </div>
-        
+
+        <div id="three-dot-modal" class="modal">
+            <div class="three-dot-options">
+                <ul>
+                    <li>Edit post</li>
+                    <li>Remove post</li>
+                </ul>
+            </div>
+        </div>
+        <script>  
+            $('.three-dot-menu').click(function(){
+                console.log("im clicked");
+
+                var position = $('.three-dot-menu').position();
+                var top = position.top-400;
+                var left = position.left - 150;
+
+                $('#three-dot-modal').show();
+
+                $('.three-dot-options').css({
+                    top: top,
+                    left: left,
+                });
+
+                $('.three-dot-menu').css('background-color', '#D9D9D9');
+            })
+
+            window.onclick = function(event) {
+                if (event.target.id == 'three-dot-modal') {
+                    $("#three-dot-modal").hide();
+                    $('.three-dot-menu').css('background-color', '');
+                }
+            }
+        </script>
     </body>
 </html>
