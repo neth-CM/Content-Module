@@ -544,36 +544,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.ms-56 {
-  margin-inline-start: 14rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.me-1 {
-  margin-inline-end: 0.25rem;
-}
-
-.ms-1 {
-  margin-inline-start: 0.25rem;
-}
-
-.ms-2 {
-  margin-inline-start: 0.5rem;
-}
-
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -582,10 +554,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -604,21 +572,31 @@ video {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
 }
 
-.justify-self-end {
-  justify-self: end;
+.justify-items-center {
+  justify-items: center;
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .py-32 {
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-5xl {
@@ -630,10 +608,14 @@ video {
   font-weight: 700;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
-.font-light {
-  font-weight: 300;
+.underline {
+  text-decoration-line: underline;
 }
