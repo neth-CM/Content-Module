@@ -1,10 +1,4 @@
-
 function openModal(modalId, overlayId){
-    document.getElementById(modalId).style.display = 'flex';
-    document.getElementById(overlayId).style.display = 'flex';
-}
-
-function openSuccessModal(modalId, overlayId){
     document.getElementById(modalId).style.display = 'flex';
     document.getElementById(overlayId).style.display = 'flex';
 }
@@ -13,6 +7,12 @@ function closeModal(modalId, overlayId) {
     document.getElementById(modalId).style.display = 'none';
     document.getElementById(overlayId).style.display = 'none';
 }
+
+function openSuccessModal(modalId, overlayId){
+    document.getElementById(modalId).style.display = 'flex';
+    document.getElementById(overlayId).style.display = 'flex';
+}
+
 
 function closeOpenModal(modalId, overlayId) {
     document.getElementById(modalId).style.display = 'none';

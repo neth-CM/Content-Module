@@ -15,20 +15,3 @@
     height: 80px;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    transition: display 0.3s ease;
-    min-width: 30%;
-    min-height: 500px;
-    border-radius: 35px;
-  }
-

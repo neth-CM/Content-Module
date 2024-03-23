@@ -14,30 +14,30 @@
         <p class="font-normal text-2xl">WELCOME TO</p>
         <img src="../src/pictures/sprachins_logo.png" class="logo">
         
-        <form class="flex flex-col items-center w-full">
+        <form class="flex flex-col items-center w-2/3">
           
-          <div class="relative mb-3 mt-3 w-2/3">  
+          <div class="relative mb-3 mt-3 w-full">  
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="absolute top-1/2 left-3 transform -translate-y-1/2 w-6 h-6 text-black">
               <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
             </svg>
             <input type="text" class="border border-black pl-10 pr-4 py-1 h-10 focus:outline-none w-full" placeholder="Email">
           </div>
           
-          <div class="relative w-2/3">
+          <div class="relative w-full">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class= "absolute top-1/2 left-3 transform -translate-y-1/2 w-6 h-6 text-black">
               <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd" />
             </svg>
             <input type="password" class="border border-black pl-10 pr-4 py-1 h-10 focus:outline-none w-full" placeholder="Password">
           </div>
           
-          <div class="w-2/3">
-            <p class="mt-2 text-sm text-german-red hover:text-dark-red-2 cursor-pointer" style="text-align: right;">Forgot password?</p>
+          <div class="self-end">
+            <p class="mt-2 text-sm text-german-red hover:text-dark-red-2 cursor-pointer" style="text-align: right;" onclick="openModal('forget-password-modal', 'overlay-2')">Forgot password?</p>
           </div>
           
           <!--Button to login add backend logic for logging in-->
           <!-- For Development purposes. Change code after done -->
 
-          <button type="button" class="mt-5 w-1/3 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150" onclick="openModal('modal1', 'overlay')">Login</button>
+          <button type="button" class="mt-5 w-1/3 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150" onclick="openModal('modal1', 'overlay-1')">Login</button>
         </form>
 
         <div>
@@ -51,17 +51,37 @@
 
   
   </div>
+
+ 
   
   <!-- For Development purposes. Change code after done -->
-  <div id="overlay" class="hidden fixed size-full bg-german-black opacity-50 ease-linear duration-150" onclick="closeModal('modal1', 'overlay')"></div>
-  <div id="modal1" class="hidden fixed min-h-52 w-1/3 bg-german-white items-center justify-center flex-col">
+  <div id="overlay-1" class="hidden fixed size-full bg-german-black opacity-50 transition-all duration-300" onclick="closeModal('modal1', 'overlay-1')"></div>
+  <div id="modal1" class="hidden fixed min-h-52 min-w-1/3 p-6 bg-white-yellow items-center justify-center flex-col transition-all duration-300">
     <h1 class="text-xl font-bold">Development Mode</h1>
     <p>Select role to login</p>
-    <div class="space-x-4">
-      <button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150"><a href="student/home.html">Student</a></button>
-      <button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150"><a href="teacher/home.html">Teacher</a></button>
-      <button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150"><a href="admin/home.html">Admin</a></button>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="student/home.html"><button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150">Student</button></a>
+      <a href="teacher/home.html"><button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150">Teacher</button></a>
+      <a href="admin/home.html"><button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150">Admin</button></a>
     </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div id="overlay-2" class="hidden fixed size-full bg-german-black opacity-50 transition-all duration-300" onclick="closeModal('forget-password-modal', 'overlay-2')"></div>
+  <div id="forget-password-modal" class="hidden fixed min-h-48 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 p-6 bg-white-yellow items-center justify-center flex-col transition-all duration-300">
+ 
+    <h1 class="text-xl font-bold">Forgot Password?</h1>
+    <p class="text-center mt-2">Please provide the email that you used when you signed up for your account</p>
+
+    <form class="flex flex-col mb-0">
+      <p class="mt-5">Email Address</p>
+      <input type="text" class="border border-black pl-2 mb-3 mt-1 py-1 h-10 focus:outline-none w-full">
+      <p class="text-xs text-center">We will send you an email that will allow you to reset your password.</p>
+      <a href="reset-pass.html" class="self-center"><button class="mt-5 w-36 h-10 self-center size-8 font-bold bg-dark-red-2 text-white-yellow hover:bg-german-red ease-in duration-150" type="button">Reset Password</button></a>
+    </form>
+  </div>
+
+  
   
     
   <script src="../src/js/modal.js"></script>
