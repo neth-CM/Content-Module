@@ -965,8 +965,9 @@ video {
   border-color: rgb(222 0 0 / var(--tw-border-opacity));
 }
 
-.bg-\[\#00000066\] {
-  background-color: #00000066;
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-\[\#00000066\] {
@@ -988,37 +989,32 @@ video {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .bg-dark-red-2 {
-=======
-.bg-white {
->>>>>>> Stashed changes
   --tw-bg-opacity: 1;
   background-color: rgb(137 14 7 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .bg-dark-red-5 {
   --tw-bg-opacity: 1;
   background-color: rgb(159 9 10 / var(--tw-bg-opacity));
-}
-
-.bg-german-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-modal-overlay {
   background-color: #00000066;
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-white-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 253 242 / var(--tw-bg-opacity));
-=======
+}
+
 .fill-black {
-  fill: #000;
->>>>>>> Stashed changes
+  fill: #000000;
 }
 
 .stroke-2 {
@@ -1175,9 +1171,19 @@ video {
   font-weight: 600;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-german-red {
   --tw-text-opacity: 1;
   color: rgb(222 0 0 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-white-yellow {
@@ -1232,7 +1238,6 @@ video {
   transition-duration: 150ms;
 }
 
-<<<<<<< Updated upstream
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1251,8 +1256,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-=======
->>>>>>> Stashed changes
 .placeholder\:text-\[\#575757\]::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(87 87 87 / var(--tw-text-opacity));
