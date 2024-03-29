@@ -28,6 +28,7 @@ module.exports = {
       'dark-red-4': '#550702',
       'dark-red-5': '#9F090A',
       'dark-red-6': '#FD0100',
+      'grey-1': '#D9D9D9',
     },
     extend: {},
   },

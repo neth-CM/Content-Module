@@ -58,6 +58,7 @@
     "path-key": "^3.1.1",
     "path-parse": "^1.0.7",
     "path-scurry": "^1.10.1",
+    "picmo": "^5.8.5",
     "picocolors": "^1.0.0",
     "picomatch": "^2.3.1",
     "pify": "^2.3.0",
@@ -97,10 +98,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/tailwind/style.css --watch"                          
+    "dev": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/tailwind/style.css --watch"
   },
   "author": "",
   "license": "ISC",
   "description": ""
 }
-
