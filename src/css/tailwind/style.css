@@ -970,6 +970,10 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.bg-\[\#00000066\] {
+  background-color: #00000066;
+}
+
 .bg-\[\#666666\] {
   --tw-bg-opacity: 1;
   background-color: rgb(102 102 102 / var(--tw-bg-opacity));
@@ -1007,6 +1011,10 @@ video {
 .bg-white-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 253 242 / var(--tw-bg-opacity));
+}
+
+.fill-black {
+  fill: #000000;
 }
 
 .stroke-2 {
