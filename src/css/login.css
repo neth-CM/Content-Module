@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf),
+         url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+}
+
+.background {
+    position: relative;
+    background-image: url(../pictures/bg_1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
