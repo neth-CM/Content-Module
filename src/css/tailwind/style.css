@@ -969,6 +969,10 @@ video {
   background-color: #00000066;
 }
 
+.bg-\[\#00000066\] {
+  background-color: #00000066;
+}
+
 .bg-\[\#666666\] {
   --tw-bg-opacity: 1;
   background-color: rgb(102 102 102 / var(--tw-bg-opacity));
@@ -984,11 +988,16 @@ video {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
+<<<<<<< Updated upstream
 .bg-dark-red-2 {
+=======
+.bg-white {
+>>>>>>> Stashed changes
   --tw-bg-opacity: 1;
   background-color: rgb(137 14 7 / var(--tw-bg-opacity));
 }
 
+<<<<<<< Updated upstream
 .bg-dark-red-5 {
   --tw-bg-opacity: 1;
   background-color: rgb(159 9 10 / var(--tw-bg-opacity));
@@ -1006,6 +1015,10 @@ video {
 .bg-white-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 253 242 / var(--tw-bg-opacity));
+=======
+.fill-black {
+  fill: #000;
+>>>>>>> Stashed changes
 }
 
 .stroke-2 {
@@ -1219,6 +1232,7 @@ video {
   transition-duration: 150ms;
 }
 
+<<<<<<< Updated upstream
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1237,6 +1251,8 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+=======
+>>>>>>> Stashed changes
 .placeholder\:text-\[\#575757\]::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(87 87 87 / var(--tw-text-opacity));
