@@ -2,17 +2,22 @@ function openModal(modalId, overlayId){
     document.getElementById(modalId).style.display = 'flex';
     document.getElementById(overlayId).style.display = 'flex';
     document.querySelector('body').style.overflow = "hidden";
+
+    setTimeout(() =>{
+        document.getElementById(modalId).style.opacity = '1';
+        document.getElementById(overlayId).style.opacity = '1';    
+    }, 100);
+
 }
 
 function closeModal(modalId, overlayId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.getElementById(overlayId).style.display = 'none';
-    document.querySelector('body').style.overflow = "auto";
-}
-
-function closeSecondaryModal(modalId, overlayId){
-    document.getElementById(modalId).style.display = 'none';
-    document.getElementById(overlayId).style.display = 'none';
+    document.getElementById(modalId).style.opacity = '0';
+    document.getElementById(overlayId).style.opacity = '0'; 
+    setTimeout(() =>{  
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementById(overlayId).style.display = 'none';
+        document.querySelector('body').style.overflow = "auto";
+    }, 200);
 }
 
 function closeOpenModal(modalId, overlayId) {

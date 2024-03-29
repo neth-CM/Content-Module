@@ -608,6 +608,11 @@ video {
   float: right;
 }
 
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -616,6 +621,11 @@ video {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .my-\[2px\] {
@@ -687,20 +697,16 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-\[25px\] {
   margin-top: 25px;
 }
 
 .mt-\[30px\] {
   margin-top: 30px;
-}
-
-.ms-8 {
-  margin-inline-start: 2rem;
-}
-
-.ms-5 {
-  margin-inline-start: 1.25rem;
 }
 
 .box-border {
@@ -768,6 +774,10 @@ video {
   height: 2.5rem;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -810,6 +820,10 @@ video {
 
 .min-h-\[50vh\] {
   min-height: 50vh;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-2\/3 {
@@ -1014,6 +1028,10 @@ video {
   border-width: 3px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1049,8 +1067,17 @@ video {
   background-color: rgb(159 9 10 / var(--tw-bg-opacity));
 }
 
+.bg-grey-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
 .bg-modal-overlay {
   background-color: #00000066;
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-white {
@@ -1063,9 +1090,8 @@ video {
   background-color: rgb(255 253 242 / var(--tw-bg-opacity));
 }
 
-.bg-grey-1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+.bg-none {
+  background-image: none;
 }
 
 .fill-black {
@@ -1207,6 +1233,10 @@ video {
   font-size: 1.953rem;
 }
 
+.text-4xl {
+  font-size: 2.441rem;
+}
+
 .text-modal-head {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1250,10 +1280,6 @@ video {
 .text-white-yellow {
   --tw-text-opacity: 1;
   color: rgb(255 253 242 / var(--tw-text-opacity));
-}
-
-.opacity-50 {
-  opacity: 0.5;
 }
 
 .opacity-0 {
@@ -1309,6 +1335,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-150 {
   transition-duration: 150ms;
 }
@@ -1346,9 +1378,21 @@ video {
   color: rgb(137 14 7 / var(--tw-text-opacity));
 }
 
+.focus\:bg-none:focus {
+  background-image: none;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.active\:bg-none:active {
+  background-image: none;
+}
+
+.disabled\:bg-none:disabled {
+  background-image: none;
 }
 
 @media (min-width: 640px) {
