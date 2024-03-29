@@ -16,6 +16,7 @@ module.exports = {
       '5xl': '3.052rem',
     },
     colors: {
+      'modal-overlay': '#00000066',
       'german-yellow': '#FFCF00',
       'german-red': '#DE0000',
       'german-black': '#000000',

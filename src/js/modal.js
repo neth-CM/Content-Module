@@ -13,7 +13,6 @@ function openSuccessModal(modalId, overlayId){
     document.getElementById(overlayId).style.display = 'flex';
 }
 
-
 function closeOpenModal(modalId, overlayId) {
     document.getElementById(modalId).style.display = 'none';
     document.getElementById(overlayId).style.display = 'none';
