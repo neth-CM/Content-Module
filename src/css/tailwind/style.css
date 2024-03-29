@@ -667,6 +667,10 @@ video {
   margin-top: 30px;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -736,6 +740,10 @@ video {
   height: 2.5rem;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -778,6 +786,10 @@ video {
 
 .min-h-\[50vh\] {
   min-height: 50vh;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-2\/3 {
@@ -904,6 +916,12 @@ video {
        column-gap: 1.5rem;
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .self-start {
   align-self: flex-start;
 }
@@ -960,6 +978,18 @@ video {
   border-width: 3px;
 }
 
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-b-8 {
+  border-bottom-width: 8px;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -999,6 +1029,10 @@ video {
   background-color: #00000066;
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1007,6 +1041,10 @@ video {
 .bg-white-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 253 242 / var(--tw-bg-opacity));
+}
+
+.bg-none {
+  background-image: none;
 }
 
 .fill-black {
@@ -1133,6 +1171,10 @@ video {
   font-size: 1.953rem;
 }
 
+.text-base {
+  font-size: 1rem;
+}
+
 .text-modal-head {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1176,10 +1218,6 @@ video {
 .text-white-yellow {
   --tw-text-opacity: 1;
   color: rgb(255 253 242 / var(--tw-text-opacity));
-}
-
-.opacity-50 {
-  opacity: 0.5;
 }
 
 .shadow-\[0_15px_20px_rgba\(0\2c 0\2c 0\2c 0\.369\)\] {
@@ -1268,9 +1306,21 @@ video {
   color: rgb(137 14 7 / var(--tw-text-opacity));
 }
 
+.focus\:bg-none:focus {
+  background-image: none;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.active\:bg-none:active {
+  background-image: none;
+}
+
+.disabled\:bg-none:disabled {
+  background-image: none;
 }
 
 @media (min-width: 640px) {
