@@ -255,7 +255,7 @@
                 </div>
             </div>
          </div> -->
-        <script src="../../src/js/modal.js"></script>
+
         <script>
             document.getElementById('kebab').addEventListener('click', function() { 
                 event.stopPropagation();
@@ -277,7 +277,7 @@
                 document.getElementById('modal-submit-button').textContent = 'Create';
 
                 // Add fadein
-                // openModal('modal');
+                openModal('modal');
             });
 
 
@@ -290,14 +290,14 @@
                 document.getElementById('post-content').value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
                
                 // Add fadein
-                // openModal('modal');
+                openModal('modal');
             });
 
 
-            // function openModal(modalId){
-            //     document.getElementById(modalId).style.display = 'block';
-            //     document.querySelector('body').style.overflow = "hidden";
-            // }
+            function openModal(modalId){
+                document.getElementById(modalId).style.display = 'block';
+                document.querySelector('body').style.overflow = "hidden";
+            }
 
 
             // $('#post-tag-button').click(function(){
@@ -346,13 +346,13 @@
             // });
 
 
-            // window.onclick = function(event) {
-            //     var modalType = document.getElementById('modal').getAttribute('data-modal');
+            window.onclick = function(event) {
+                var modalType = document.getElementById('modal').getAttribute('data-modal');
 
-            //     if (modalType != 'locked' && event.target.id == 'modal-content') {
-            //         toClose();
-            //     }
-            // }
+                if (modalType != 'locked' && event.target.id == 'modal-content') {
+                    toClose();
+                }
+            }
 
 
             // $('#form-post').submit(function(e){
@@ -413,15 +413,15 @@
                     // $('#post-tag-button div p').text('Broadcast');
 
                     // Add fade out transition for modal
-                    // closeModal();
+                    closeModal();
                 }
             }
 
 
-            // function closeModal() {
-            //     document.getElementById('modal').style.display = 'none';
-            //     document.querySelector('body').style.overflow = "auto";
-            // }
+            function closeModal() {
+                document.getElementById('modal').style.display = 'none';
+                document.querySelector('body').style.overflow = "auto";
+            }
         </script>
     <!-- </body> -->
 </html>
