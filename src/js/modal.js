@@ -1,11 +1,13 @@
 function openModal(modalId, overlayId){
     document.getElementById(modalId).style.display = 'flex';
     document.getElementById(overlayId).style.display = 'flex';
+    document.querySelector('body').style.overflow = "hidden";
 }
 
 function closeModal(modalId, overlayId) {
     document.getElementById(modalId).style.display = 'none';
     document.getElementById(overlayId).style.display = 'none';
+    document.querySelector('body').style.overflow = "auto";
 }
 
 function openSuccessModal(modalId, overlayId){
