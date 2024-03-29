@@ -3,9 +3,6 @@ button = document.querySelector("button");
 
 inputs.forEach((input, index1) => {
 input.addEventListener("keyup", (e) => {
-  // This code gets the current input element and stores it in the currentInput variable
-  // This code gets the next sibling element of the current input element and stores it in the nextInput variable
-  // This code gets the previous sibling element of the current input element and stores it in the prevInput variable
     const currentInput = input,
         nextInput = input.nextElementSibling,
         prevInput = input.previousElementSibling;
@@ -33,9 +30,9 @@ input.addEventListener("keyup", (e) => {
         }
         });
     }
-    //if the fourth input( which index number is 3) is not empty and has not disable attribute then
+    //if the 6th input( which index number is 5) is not empty and has not disable attribute then
     //add active class if not then remove the active class.
-    if (!inputs[3].disabled && inputs[3].value !== "") {
+    if (!inputs[5].disabled && inputs[5].value !== "") {
         button.classList.add("active");
         return;
     }
