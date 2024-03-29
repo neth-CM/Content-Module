@@ -37,17 +37,17 @@ body{
     -516px
 }  */
 
-.background {
+.bg_2 {
     position: relative;
     min-height: 100vh;
 }
 
-.content {
+.bg_2 .content {
     position: relative;
     z-index: 2;
 }
 
-.background::after {
+.bg_2::after {
     position: absolute;
     top: -516px;
     background: url(../../src/pictures/background1.png);
@@ -55,12 +55,4 @@ body{
     width: 100%;
     height: calc(100% + 516px);
     z-index: 1;
-}
-
-.details{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 0 21px;
 }

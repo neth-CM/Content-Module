@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Emoji Test</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- <script src="../../src/js/emoji-button.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar">
+        <a href="../index.html">Go Back</a>
+    </nav>
+    <h1>Emoji Button</h1>
+    <button id="emoji-button">😀</button>
+    <input type="text" name="texti" id="text">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const button = document.querySelector('#emoji-button');
+        const picker = new EmojiButton();
+
+        button.addEventListener('click', () => {
+            picker.togglePicker(button);
+        });
+
+        picker.on('emoji', emoji => {
+          document.querySelector('input').value += emoji;
+        });
+      });
+    </script>
+  </body>
+</html>

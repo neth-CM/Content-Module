@@ -1,11 +1,294 @@
+<!-- npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/tailwind/style.css --watch -->
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Content Module</title>
+        <title>Content Module - Admin</title>
+
+        <link rel="stylesheet" href="../../src/css/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../../src/css/fontawesome/css/fontawesome.min.css">
+        <link href="../../src/css/tailwind/style.css" rel="stylesheet">
+        <link href="../../src/css/style.css" rel="stylesheet">
+        <link href="../../src/css/style-post.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+
     </head>
     <body>
+        <div class="background">
+            <div class="content">
+                <nav class="navbar">
+                    <a href="../index.html">Go Back</a>
+                </nav>
+
+                <div class="details">
+                    <div class="flex items center">
+                      <!-- CREATE POST -->
+                      <button id="create-post-button">
+                          <img src="../../src/pictures/john.jpg" alt="image">
+                          <p>Create an announcement...</p>
+                      </button>
+                      <!-- ARCHIVE POSTS BUTTON -->
+                      <a id="archives-button" href="#">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <p>Archives</p>
+                      </a>
+                    </div>
+
+                    <!-- ADMIN POST -->
+                    <div class="post">
+                        <div class="poster-details">
+                            <img src="../../src/pictures/john.jpg" alt="image" srcset="">
+                            <div>
+                                <div class="font-bold">John Carlo</div>
+                                <p>Department Office</p>
+                            </div>
+                            <div class="kebab">
+                              <figure></figure>
+                              <figure></figure>
+                              <figure></figure>
+                              <ul id="kebab-options" class="dropdown">
+                                  <li id="edit-button">Edit post</li>
+                                  <li>Delete post</li>
+                                  <li>Hide post</li>
+                              </ul>
+                          </div>
+                        </div>
+                        <div class="post-title">Test Post</div>
+                        <div class="post-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                        <div class="flex flex-row justify-between items-end">
+                            <div class="post-tag global">
+                                <i class="fa-solid fa-earth-asia"></i>
+                                <p class="font-semibold">Global</p>
+                            </div>
+                            <div class="font-light">March 4, 2024 - 9:35 AM</div>
+                        </div>
+                    </div>
+
+                    <!-- TEACHER POST -->
+                    <div class="post">
+                        <div class="poster-details">
+                            <img src="../../src/pictures/tricia.png" alt="image" srcset="">
+                            <div>
+                                <div class="font-bold">Tricia Diaz</div>
+                                <p>Department Office</p>
+                            </div>
+                            <div class="kebab">
+                                <figure></figure>
+                                <figure></figure>
+                                <figure></figure>
+                                <ul id="kebab-options" class="dropdown">
+                                  <li>Delete post</li>
+                                  <li>Hide post</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="post-title"></div>
+                        <div class="post-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                        <div class="flex flex-row justify-between items-end">
+                            <div class="post-tag broadcast">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <p class="font-semibold">Broadcast</p>
+                            </div>
+                            <div class="font-light">February 29, 2024 - 3:10 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="post-modal" class="modal" data-post="">
+            <form id="form-post" class="h-full flex justify-center items-center">
+               <div class="modal-content w-2/4">
+                    <div class="modal-header">
+                        <button type="button" onclick="closeModal()"><i class="fa-solid fa-arrow-left-long"></i></button>
+                        <h3 class="modal-title font-bold">Post</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="title" id="modal-post-title" placeholder="Post Title" maxlength="50">
+                        <div class="modal-post-body">
+                            <textarea name="content" id="modal-post-content" placeholder="Write Here..." required></textarea>
+                            <div class="body-accessories">
+                                <input type="hidden" id="modal-post-tag" name="tag" value="global">
+                                <button type="button" id="post-tag-button">
+                                    <div class="post-tag global">
+                                        <i class="fa-solid fa-earth-asia"></i>
+                                        <p class="font-semibold">Global</p>
+                                    </div>
+                                </button>
+                                <label for="modal-post-photo" class="custom-photo-upload"></label>
+                                <input type="file" name="photo" id="modal-post-photo" accept="image/png, image/jpeg">
+                                
+                                <label for="modal-post-file" class="custom-file-upload"></label>
+                                <input type="file" name="file" id="modal-post-file" accept=".doc,.docx,.pdf">
+                                <button type="button" id="emoji-button"><i class="fa-solid fa-face-smile"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="flex justify-center items-center">
+                            <p class="me-3">Send a copy</p>
+                            <select name="copy-option" id="modal-post-select">
+                                <option value="email-recipients" selected>Email Recipients</option>
+                                <option value="push-notif">Push Notifications</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+                            <button class="submit" id="modal-submit-button">Submit</button>
+                        </div>
+                    </div>
+                </div> 
+            </form>
+        </div>
+
+        <script>
+            $('.kebab').click(function(){
+                event.stopPropagation();
+                $('.dropdown').toggleClass('active');
+                $('.kebab').toggleClass('active');
+            });
+
+
+            document.addEventListener('click', function(event) {
+                if (event.target.id != 'kebab-options') {
+                    $('.dropdown').removeClass('active');
+                    $('.kebab').removeClass('active');
+                }
+            });
+
+
+            $('#create-post-button').click(function(){
+                $('#post-modal').attr('data-post', "create");
+                $('.modal-title').text('Create Post');
+                $('#modal-submit-button').text('Save');
+
+                $('#post-modal').fadeIn();
+                $('body').css('overflow', "hidden");
+            })
+
+
+            $('#edit-button').click(function(){
+                $('#post-modal').attr('data-post', "edit");
+                $('.modal-title').text('Edit Post');
+                $('#modal-submit-button').text('Save');
+
+                // Add the values needed to the post edited
+                $('#modal-post-title').val('Test Post');
+                $('#modal-post-content').val('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+                
+                $('#post-modal').fadeIn();
+                $('body').css('overflow', "hidden");
+            })
+
+
+            $('#post-tag-button').click(function(){
+                const tag = $('#modal-post-tag').val();
+                if(tag == "broadcast"){
+                    // div
+                    $('#post-tag-button div').removeClass('broadcast');
+                    $('#post-tag-button div').addClass('global');
+                    // i
+                    $('#post-tag-button div i').removeClass('fa-bullhorn');
+                    $('#post-tag-button div i').addClass('fa-earth-asia');
+                    // p
+                    $('#post-tag-button div p').text('Global');
+
+                    $('#modal-post-tag').val('global');
+                } else{
+                    // div
+                    $('#post-tag-button div').removeClass('global');
+                    $('#post-tag-button div').addClass('broadcast');
+                    // i
+                    $('#post-tag-button div i').removeClass('fa-earth-asia');
+                    $('#post-tag-button div i').addClass('fa-bullhorn');
+                    // p
+                    $('#post-tag-button div p').text('Broadcast');
+
+                    $('#modal-post-tag').val('broadcast');
+                }
+            })
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const button = document.querySelector('#emoji-button');
+                const picker = new EmojiButton();
+
+                button.addEventListener('click', () => {
+                    picker.togglePicker(button);
+                });
+
+                picker.on('emoji', emoji => {
+                    var cursorPos = $('#modal-post-content').prop('selectionStart');
+                    var text = $('#modal-post-content').val();
+                    var textBefore = text.substring(0,  cursorPos);
+                    var textAfter  = text.substring(cursorPos, text.length);
+
+                    $('#modal-post-content').val(textBefore + emoji + textAfter);
+                });
+            });
+
+
+            window.onclick = function(event) {
+                var modalType = $('#post-modal').attr('data-post');
+                if (modalType != 'edit' && event.target.id == 'form-post') {
+                    closeModal()
+                }
+            }
+
+
+            $('#form-post').submit(function(e){
+                // var data = $("#form-post").serialize();
+                // $.ajax({
+                //     type : 'POST',
+                //     url : '../../src/php/save_order.php',
+                //     data : data,
+                //     success : function(response) {
+                //         var res = JSON.parse(response);
+                //         alert(res["message"]);
+                //         if(res["status"] == 200){
+                //             setTimeout(function(){
+                //                 location.reload()
+                //             },800)
+                //         }  
+                //     }
+                // });
+                e.preventDefault();
+
+                // delete me in backend
+                closeModal()
+            })
+
+
+            function closeModal(){
+                $('#post-modal').fadeOut();
+
+                $('#post-modal').attr('data-post', "");
+                $('.modal-title').text('Post');
+
+                // reset form field values to none
+                $('#modal-post-title').val('');
+                $('#modal-post-content').val('');
+                $('#modal-post-photo').val('');
+                $('#modal-post-file').val('');
+                // reset tag
+                $('#modal-post-tag').val('global');
+                $('#post-tag-button div').removeClass('broadcast');
+                $('#post-tag-button div i').removeClass('fa-bullhorn');
+                $('#post-tag-button div').addClass('global');
+                $('#post-tag-button div i').addClass('fa-earth-asia');
+                $('#post-tag-button div p').text('Global');
+
+                $('body').css('overflow', "auto");
+            }
+        </script>
     </body>
 </html>
