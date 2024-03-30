@@ -8,12 +8,9 @@
 
         <title>Content Module - Teacher</title>
 
-        <link rel="stylesheet" href="../../src/css/fontawesome/css/all.min.css">
-        <link rel="stylesheet" href="../../src/css/fontawesome/css/fontawesome.min.css">
         <link href="../../src/css/tailwind/style.css" rel="stylesheet">
         <link href="../../src/css/style.css" rel="stylesheet">
         <link href="../../src/css/style-post.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 
     </head>
@@ -29,11 +26,22 @@
                 <!-- DETAILS -->
                 <div class="w-2/3 mx-auto pt-16 pb-10">
 
-                    <!-- CREATE POST -->
-                    <button onclick="openModal('create-post-modal', 'overlay-1')" class="w-full flex items-center gap-x-6 bg-white rounded-[20px] py-5 px-[25px] mb-11 outline-none shadow-[0_6px_20px_5px_rgba(0,0,0,0.369),0_4px_1px_0_rgba(0,0,0,0.231)]">
-                        <img src="../../src/pictures/tricia.png" alt="image" class="size-20 border-[3px] border-german-yellow rounded-full">
-                        <p>Create an announcement...</p>
-                    </button>
+                    <!-- BUTTONS -->
+                    <div class="flex items-center gap-x-5 mb-11">
+                        <!-- CREATE POST -->
+                        <button onclick="openModal('create-post-modal', 'overlay-1')" class="w-full flex items-center gap-x-6 bg-white rounded-[20px] py-5 px-[25px] outline-none cursor-pointer shadow-[0_6px_20px_5px_rgba(0,0,0,0.369),0_4px_1px_0_rgba(0,0,0,0.231)]">
+                            <img src="../../src/pictures/tricia.png" alt="image" class="size-20 border-[3px] border-german-yellow rounded-full">
+                            <p>Create an announcement...</p>
+                        </button>
+                        <!-- ARCHIVE POSTS BUTTON -->
+                        <a href="#" class="flex flex-col justify-center items-center text-white font-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[60px] drop-shadow-[0_6px_8px_#000000b2]">
+                                <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                                <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                            </svg>
+                            <p class="mt-1">Archives</p>
+                        </a>
+                    </div>
 
                     <!-- ADMIN POST -->
                     <div class="bg-white rounded-3xl py-10 px-12 mb-6 shadow-[0_15px_20px_rgba(0,0,0,0.369)]">
@@ -43,6 +51,15 @@
                                 <div class="font-bold">John Carlo</div>
                                 <p>Department Office</p>
                             </div>
+                            <div id="kebab" class="size-10 cursor-pointer relative flex flex-col justify-center items-center box-border rounded-full transition-[.3s] hover:bg-[#eeeeee]">
+                                <figure class="size-[5px] rounded-[5px] my-[2px] bg-[#666666]"></figure>
+                                <figure class="size-[5px] rounded-[5px] my-[2px] bg-[#666666]"></figure>
+                                <figure class="size-[5px] rounded-[5px] my-[2px] bg-[#666666]"></figure>
+                                <ul id="kebab-options" class="kebab-options w-[170px] absolute right-5 top-10 bg-white rounded-lg py-2 shadow-[0_3px_3px_#00000075]">
+                                    <li id="edit-button">Edit post</li>
+                                    <li>Remove post</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="text-3xl mb-[15px]">Test Post</div>
                         <div class="text-justify mb-9">
@@ -50,8 +67,7 @@
                         </div>
                         <div class="flex flex-row justify-between items-end">
                             <!-- GLOBAL TAG -->
-                            <!-- ADD border color and tag background color -->
-                            <div class="flex flex-row items-center py-[5px] px-3 border-2">
+                            <div class="flex flex-row items-center py-[5px] px-3 border-2 border-[#CCA421] bg-german-yellow">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[22px] fill-black stroke-2 me-2">
                                     <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM8.547 4.505a8.25 8.25 0 1 0 11.672 8.214l-.46-.46a2.252 2.252 0 0 1-.422-.586l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.211.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.654-.261a2.25 2.25 0 0 1-1.384-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.279-2.132Z" clip-rule="evenodd" />
                                 </svg>
@@ -85,10 +101,9 @@
                         </div>
                         <div class="flex flex-row justify-between items-end">
                             <!-- BROADCAST TAG -->
-                            <!-- ADD border color and tag background color -->
-                            <div class="flex flex-row items-center py-[5px] px-3 border-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-[22px] me-2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                            <div class="flex flex-row items-center py-[5px] px-3 border-2 border-[#896B42] bg-[#DDA75D]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[22px] me-2">
+                                    <path d="M16.881 4.345A23.112 23.112 0 0 1 8.25 6H7.5a5.25 5.25 0 0 0-.88 10.427 21.593 21.593 0 0 0 1.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.593.772-2.468a17.116 17.116 0 0 1-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0 0 18 11.25c0-2.414-.393-4.735-1.119-6.905ZM18.26 3.74a23.22 23.22 0 0 1 1.24 7.51 23.22 23.22 0 0 1-1.41 7.992.75.75 0 1 0 1.409.516 24.555 24.555 0 0 0 1.415-6.43 2.992 2.992 0 0 0 .836-2.078c0-.807-.319-1.54-.836-2.078a24.65 24.65 0 0 0-1.415-6.43.75.75 0 1 0-1.409.516c.059.16.116.321.17.483Z" />
                                 </svg>
                                 <p class="font-semibold">Broadcast</p>
                             </div>
@@ -103,164 +118,167 @@
 
 
         <!-- CREATE MODAL -->
-        <div id="overlay-1" onclick="toClose('create-post-modal', 'overlay-1')" class="hidden fixed size-full top-0 left-0 z-10 bg-modal-overlay overflow-auto"></div>
-        <div id="create-post-modal" class="hidden w-2/4 fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-20">
+        <div id="overlay-1" onclick="toClose('create-post-modal', 'overlay-1')" class="hidden fixed size-full top-0 left-0 z-10 bg-modal-overlay overflow-auto transition-opacity opacity-0 ease-in"></div>
+        <div id="create-post-modal" class="hidden w-2/4 fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-20 transition-opacity opacity-0 ease-in">
             <!-- MODAL CONTENT -->
             <div class="w-full bg-white p-[25px_25px_50px] border-2 border-german-red rounded-xl shadow-[0_8px_8px_3px_#00000054]">
-                <!-- MODAL HEADER -->
-                <div class="flex items-center mb-[25px]">
-                    <button type="button" onclick="toClose('create-post-modal', 'overlay-1')">
-                        <!-- <i class="fa-solid fa-arrow-left-long"></i> -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[25px]">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                    </button>
-                    <h1 class="w-full text-center font-bold text-3xl">Create Post</h1>
-                </div>
-
-                <!-- MODAL BODY -->
-                <div>
-                    <!-- POST TITLE INPUT -->
-                    <input type="text" name="create-title" id="create-post-title" placeholder="Post Title" maxlength="50" class="w-full bg-[#F5F5F5] py-[15px] px-5 rounded-xl mb-[15px] placeholder:text-[#575757] focus:outline-none">
-                    <div class="w-full bg-[#F5F5F5] py-[25px] px-5 rounded-xl">
-                        <!-- POST CONTENT TEXTAREA -->
-                        <textarea name="create-content" id="create-post-content" placeholder="Write Here..." required class="w-full min-h-[150px] max-h-[150px] bg-[#F5F5F5] resize-none placeholder:text-[#575757] focus:outline-none"></textarea>
-                        <!-- OTHER BUTTONS -->
-                        <div class="grid grid-cols-[auto_auto_auto_1fr] gap-x-3 items-center bg-[#F5F5F5] pt-[18px]">
-                            <!-- ANNOUNCEMENT TAG -->
-                            <input type="hidden" id="create-post-tag" name="create-tag" value="broadcast">
-                            <button type="button" id="create-post-tag-button" disabled>
-                                <!-- ADD border color and tag background color -->
-                                <div class="flex flex-row items-center py-[5px] px-3 border-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-[22px] me-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                <!-- MODAL FORM -->
+                <form id="create-post-form" action="">
+                    <!-- MODAL HEADER -->
+                    <div class="flex items-center mb-[25px]">
+                        <button type="button" onclick="toClose('create-post-modal', 'overlay-1')">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[25px]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
+                        <h1 class="w-full text-center font-bold text-3xl">Create Post</h1>
+                    </div>
+                    <!-- MODAL BODY -->
+                    <div>
+                        <!-- POST TITLE INPUT -->
+                        <input type="text" name="create-title" id="create-post-title" placeholder="Post Title" maxlength="50" class="w-full bg-[#F5F5F5] py-[15px] px-5 rounded-xl mb-[15px] placeholder:text-[#575757] focus:outline-none">
+                        <div class="w-full bg-[#F5F5F5] py-[25px] px-5 rounded-xl">
+                            <!-- POST CONTENT TEXTAREA -->
+                            <textarea name="create-content" id="create-post-content" placeholder="Write Here..." required class="w-full min-h-[150px] max-h-[150px] bg-[#F5F5F5] resize-none placeholder:text-[#575757] focus:outline-none"></textarea>
+                            <!-- OTHER BUTTONS -->
+                            <div class="grid grid-cols-[auto_auto_auto_1fr] gap-x-3 items-center bg-[#F5F5F5] pt-[18px]">
+                                <!-- ANNOUNCEMENT TAG -->
+                                <input type="hidden" id="create-post-tag" name="create-tag" value="broadcast">
+                                <button type="button" id="create-post-tag-button" onclick="changeTag('create-post-tag-button')">
+                                    <div class="flex flex-row items-center py-[5px] px-3 border-2 border-[#896B42] bg-[#DDA75D]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[22px] me-2">
+                                            <path d="M16.881 4.345A23.112 23.112 0 0 1 8.25 6H7.5a5.25 5.25 0 0 0-.88 10.427 21.593 21.593 0 0 0 1.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.593.772-2.468a17.116 17.116 0 0 1-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0 0 18 11.25c0-2.414-.393-4.735-1.119-6.905ZM18.26 3.74a23.22 23.22 0 0 1 1.24 7.51 23.22 23.22 0 0 1-1.41 7.992.75.75 0 1 0 1.409.516 24.555 24.555 0 0 0 1.415-6.43 2.992 2.992 0 0 0 .836-2.078c0-.807-.319-1.54-.836-2.078a24.65 24.65 0 0 0-1.415-6.43.75.75 0 1 0-1.409.516c.059.16.116.321.17.483Z" />
+                                        </svg>
+                                        <p class="font-semibold">Broadcast</p>
+                                    </div>
+                                </button>
+                                <!-- PHOTO BUTTON -->
+                                <label for="create-post-photo" class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-9">
+                                        <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" />
                                     </svg>
-                                    <p class="font-semibold">Broadcast</p>
-                                </div>
-                            </button>
-                            <!-- PHOTO BUTTON -->
-                            <label for="create-post-photo" class="cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-9">
-                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" />
-                                </svg>
-                            </label>
-                            <input type="file" class="hidden" name="create-photo" id="create-post-photo" accept="image/png, image/jpeg">
-                            <!-- FILE BUTTON -->
-                            <label for="create-post-file" class="cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#666666" class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
-                                </svg>
-                            </label>
-                            <input type="file" class="hidden" name="create-file" id="create-post-file" accept=".doc,.docx,.pdf">
-                            <!-- EMOJI BUTTON   -->
-                            <button type="button" id="emoji-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-7 float-right me-3">
-                                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clip-rule="evenodd" />
-                                </svg>                                      
-                            </button>
+                                </label>
+                                <input type="file" class="hidden" name="create-photo" id="create-post-photo" accept="image/png, image/jpeg">
+                                <!-- FILE BUTTON -->
+                                <label for="create-post-file" class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#666666" class="size-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                    </svg>
+                                </label>
+                                <input type="file" class="hidden" name="create-file" id="create-post-file" accept=".doc,.docx,.pdf">
+                                <!-- EMOJI BUTTON   -->
+                                <button type="button" id="emoji-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-7 float-right me-3">
+                                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clip-rule="evenodd" />
+                                    </svg>                                      
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- MODAL FOOTER -->
-                <div class="flex justify-between items-center mt-[30px]">
-                    <div class="flex justify-center items-center">
-                        <p class="text-sm me-3">Send a copy</p>
-                        <select name="copy-option" id="post-select" class="border border-black rounded-[5px] p-[5px] pe-[15px]">
-                            <option value="email-recipients" selected>Email Recipients</option>
-                            <option value="push-notif">Push Notifications</option>
-                            <option value="both">Both</option>
-                        </select>
+                    <!-- MODAL FOOTER -->
+                    <div class="flex justify-between items-center mt-[30px]">
+                        <div class="flex justify-center items-center">
+                            <p class="text-sm me-3">Send a copy</p>
+                            <select name="create-copy-option" id="create-post-select" class="border border-black rounded-[5px] p-[5px] pe-[15px]">
+                                <option value="email-recipients" selected>Email Recipients</option>
+                                <option value="push-notif">Push Notifications</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <button type="button" onclick="toClose('create-post-modal', 'overlay-1')">Cancel</button>
+                            <button class="bg-dark-red-2 font-bold text-white ms-[35px] py-[6px] px-7 rounded-[4px]">Create</button>
+                        </div>
                     </div>
-                    <div class="flex justify-center items-center">
-                        <button type="button" onclick="toClose('create-post-modal', 'overlay-1')">Cancel</button>
-                        <button class="bg-dark-red-2 font-bold text-white ms-[35px] py-[6px] px-7 rounded-[4px]">Create</button>
-                    </div>
-                </div>
+                </form>
+
             </div>
         </div>
 
 
         <!-- EDIT MODAL -->
-        <div id="overlay-2" class="hidden fixed size-full top-0 left-0 z-10 bg-modal-overlay overflow-auto"></div>
-        <div id="edit-post-modal" class="hidden w-2/4 fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-20">
+        <div id="overlay-2" class="hidden fixed size-full top-0 left-0 z-10 bg-modal-overlay overflow-auto transition-opacity opacity-0 ease-in"></div>
+        <div id="edit-post-modal" class="hidden w-2/4 fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-20 transition-opacity opacity-0 ease-in">
             <!-- MODAL CONTENT -->
             <div class="w-full bg-white p-[25px_25px_50px] border-2 border-german-red rounded-xl shadow-[0_8px_8px_3px_#00000054]">
-                <!-- MODAL HEADER -->
-                <div class="flex items-center mb-[25px]">
-                    <button type="button" onclick="toClose('edit-post-modal', 'overlay-2')">
-                        <!-- <i class="fa-solid fa-arrow-left-long"></i> -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[25px]">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                    </button>
-                    <h1 class="w-full text-center font-bold text-3xl">Edit Post</h1>
-                </div>
-
-                <!-- MODAL BODY -->
-                <div>
-                    <!-- POST TITLE INPUT -->
-                    <input type="text" name="edit-title" id="edit-post-title" placeholder="Post Title" maxlength="50" class="w-full bg-[#F5F5F5] py-[15px] px-5 rounded-xl mb-[15px] placeholder:text-[#575757] focus:outline-none">
-                    <div class="w-full bg-[#F5F5F5] py-[25px] px-5 rounded-xl">
-                        <!-- POST CONTENT TEXTAREA -->
-                        <textarea name="edit-content" id="edit-post-content" placeholder="Write Here..." required class="w-full min-h-[150px] max-h-[150px] bg-[#F5F5F5] resize-none placeholder:text-[#575757] focus:outline-none"></textarea>
-                        <!-- OTHER BUTTONS -->
-                        <div class="grid grid-cols-[auto_auto_auto_1fr] gap-x-3 items-center bg-[#F5F5F5] pt-[18px]">
-                            <!-- ANNOUNCEMENT TAG -->
-                            <input type="hidden" id="edit-post-tag" name="edit-tag" value="broadcast">
-                            <button type="button" id="edit-post-tag-button" disabled>
-                                <!-- ADD border color and tag background color -->
-                                <div class="flex flex-row items-center py-[5px] px-3 border-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-[22px] me-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                <!-- MODAL FORM -->
+                <form id="edit-post-form" action="">
+                    <!-- MODAL HEADER -->
+                    <div class="flex items-center mb-[25px]">
+                        <button type="button" onclick="toClose('edit-post-modal', 'overlay-2')">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[25px]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
+                        <h1 class="w-full text-center font-bold text-3xl">Edit Post</h1>
+                    </div>
+                    <!-- MODAL BODY -->
+                    <div>
+                        <!-- POST TITLE INPUT -->
+                        <input type="text" name="edit-title" id="edit-post-title" placeholder="Post Title" maxlength="50" class="w-full bg-[#F5F5F5] py-[15px] px-5 rounded-xl mb-[15px] placeholder:text-[#575757] focus:outline-none">
+                        <div class="w-full bg-[#F5F5F5] py-[25px] px-5 rounded-xl">
+                            <!-- POST CONTENT TEXTAREA -->
+                            <textarea name="edit-content" id="edit-post-content" placeholder="Write Here..." required class="w-full min-h-[150px] max-h-[150px] bg-[#F5F5F5] resize-none placeholder:text-[#575757] focus:outline-none"></textarea>
+                            <!-- OTHER BUTTONS -->
+                            <div class="grid grid-cols-[auto_auto_auto_1fr] gap-x-3 items-center bg-[#F5F5F5] pt-[18px]">
+                                <!-- ANNOUNCEMENT TAG -->
+                                <input type="hidden" id="edit-post-tag" name="edit-tag" value="broadcast">
+                                <button type="button" id="edit-post-tag-button" disabled>
+                                    <!-- ADD border color and tag background color -->
+                                    <div class="flex flex-row items-center py-[5px] px-3 border-2 border-[#896B42] bg-[#DDA75D]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-[22px] me-2">
+                                            <path d="M16.881 4.345A23.112 23.112 0 0 1 8.25 6H7.5a5.25 5.25 0 0 0-.88 10.427 21.593 21.593 0 0 0 1.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.593.772-2.468a17.116 17.116 0 0 1-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0 0 18 11.25c0-2.414-.393-4.735-1.119-6.905ZM18.26 3.74a23.22 23.22 0 0 1 1.24 7.51 23.22 23.22 0 0 1-1.41 7.992.75.75 0 1 0 1.409.516 24.555 24.555 0 0 0 1.415-6.43 2.992 2.992 0 0 0 .836-2.078c0-.807-.319-1.54-.836-2.078a24.65 24.65 0 0 0-1.415-6.43.75.75 0 1 0-1.409.516c.059.16.116.321.17.483Z" />
+                                        </svg>
+                                        <p class="font-semibold">Broadcast</p>
+                                    </div>
+                                </button>
+                                <!-- PHOTO BUTTON -->
+                                <label for="edit-post-photo" class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-9">
+                                        <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" />
                                     </svg>
-                                    <p class="font-semibold">Broadcast</p>
-                                </div>
-                            </button>
-                            <!-- PHOTO BUTTON -->
-                            <label for="edit-post-photo" class="cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-9">
-                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" />
-                                </svg>
-                            </label>
-                            <input type="file" class="hidden" name="edit-photo" id="edit-post-photo" accept="image/png, image/jpeg">
-                            <!-- FILE BUTTON -->
-                            <label for="edit-post-file" class="cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#666666" class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
-                                </svg>
-                            </label>
-                            <input type="file" class="hidden" name="edit-file" id="edit-post-file" accept=".doc,.docx,.pdf">
-                            <!-- EMOJI BUTTON   -->
-                            <button type="button" id="emoji-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-7 float-right me-3">
-                                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clip-rule="evenodd" />
-                                </svg>                                      
-                            </button>
+                                </label>
+                                <input type="file" class="hidden" name="edit-photo" id="edit-post-photo" accept="image/png, image/jpeg">
+                                <!-- FILE BUTTON -->
+                                <label for="edit-post-file" class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#666666" class="size-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                    </svg>
+                                </label>
+                                <input type="file" class="hidden" name="edit-file" id="edit-post-file" accept=".doc,.docx,.pdf">
+                                <!-- EMOJI BUTTON   -->
+                                <button type="button" id="emoji-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666666" class="size-7 float-right me-3">
+                                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clip-rule="evenodd" />
+                                    </svg>                                      
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- MODAL FOOTER -->
-                <div class="flex justify-between items-center mt-[30px]">
-                    <div class="flex justify-center items-center">
-                        <p class="text-sm me-3">Send a copy</p>
-                        <select name="copy-option" id="post-select" class="border border-black rounded-[5px] p-[5px] pe-[15px]">
-                            <option value="email-recipients" selected>Email Recipients</option>
-                            <option value="push-notif">Push Notifications</option>
-                            <option value="both">Both</option>
-                        </select>
+                    <!-- MODAL FOOTER -->
+                    <div class="flex justify-between items-center mt-[30px]">
+                        <div class="flex justify-center items-center">
+                            <p class="text-sm me-3">Send a copy</p>
+                            <select name="edit-copy-option" id="edit-post-select" class="border border-black rounded-[5px] p-[5px] pe-[15px]">
+                                <option value="email-recipients" selected>Email Recipients</option>
+                                <option value="push-notif">Push Notifications</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <button type="button" onclick="toClose('edit-post-modal', 'overlay-2')">Cancel</button>
+                            <button class="bg-dark-red-2 font-bold text-white ms-[35px] py-[6px] px-7 rounded-[4px]">Save</button>
+                        </div>
                     </div>
-                    <div class="flex justify-center items-center">
-                        <button type="button" onclick="toClose('edit-post-modal', 'overlay-2')">Cancel</button>
-                        <button class="bg-dark-red-2 font-bold text-white ms-[35px] py-[6px] px-7 rounded-[4px]">Save</button>
-                    </div>
-                </div>
+                </form>
+
             </div>
         </div>
 
 
         <!-- DISCARD CHANGES MODAL -->
-        <div id="overlay-3" onclick="closeSecondaryModal('discard-changes-modal', 'overlay-3')" class="hidden fixed size-full top-0 left-0 z-30 bg-modal-overlay overflow-auto"></div>
-        <div id="discard-changes-modal" class="hidden fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-40">
+        <div id="overlay-3" onclick="closeSecondaryModal('discard-changes-modal', 'overlay-3')" class="hidden fixed size-full top-0 left-0 z-30 bg-modal-overlay overflow-auto transition-opacity opacity-0 ease-in"></div>
+        <div id="discard-changes-modal" data-modal="" class="hidden fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] z-40 transition-opacity opacity-0 ease-in">
             <!-- MODAL CONTENT -->
             <div class="w-full bg-white-yellow px-10 py-7 rounded-xl ">
                 <!-- MODAL HEADER -->
@@ -270,84 +288,20 @@
                 <!-- MODAL FOOTER -->
                 <div class="flex justify-center items-center mt-[25px] space-x-4">
                     <button type="button" class="bg-grey-1 font-bold py-[6px] px-7 rounded-[4px]" onclick="closeSecondaryModal('discard-changes-modal', 'overlay-3')">Cancel</button>
-                    <button class="bg-dark-red-2 font-bold text-white py-[6px] px-7 rounded-[4px]">Discard</button>
+                    <button type="button" onclick="discardChanges()" class="bg-dark-red-2 font-bold text-white py-[6px] px-7 rounded-[4px]">Discard</button>
                 </div>
             </div>
         </div>
 
     </body>
-                
-                    <!-- 
-        <div id="post-modal" class="modal" data-post="">
-            <form id="form-post" class="h-full flex justify-center items-center">
-                 <div class="modal-content w-2/4">
-                     <div class="modal-header">
-                         <button type="button" onclick="closeModal()"><i class="fa-solid fa-arrow-left-long"></i></button>
-                         <h3 class="modal-title font-bold">Post</h3>
-                     </div>
-                     <div class="modal-body">
-                         <input type="text" name="title" id="modal-post-title" placeholder="Post Title" maxlength="50">
-                         <div class="modal-post-body">
-                             <textarea name="content" id="modal-post-content" placeholder="Write Here..." required></textarea>
-                             <div class="body-accessories">
-                                 <input type="hidden" id="modal-post-tag" name="tag" value="broadcast">
-                                 <button type="button" id="post-tag-button" disabled>
-                                     <div class="post-tag broadcast">
-                                         <i class="fa-solid fa-bullhorn"></i>
-                                         <p class="font-semibold">Broadcast</p>
-                                     </div>
-                                 </button>
-                                 <label for="modal-post-photo" class="custom-photo-upload"></label>
-                                 <input type="file" name="photo" id="modal-post-photo" accept="image/png, image/jpeg">
-                                 
-                                 <label for="modal-post-file" class="custom-file-upload"></label>
-                                 <input type="file" name="file" id="modal-post-file" accept=".doc,.docx,.pdf">
-                                 <button type="button" id="emoji-button"><i class="fa-solid fa-face-smile"></i></button>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="modal-footer">
-                         <div class="flex justify-center items-center">
-                             <p class="me-3">Send a copy</p>
-                             <select name="copy-option" id="modal-post-select">
-                                 <option value="email-recipients" selected>Email Recipients</option>
-                                 <option value="push-notif">Push Notifications</option>
-                                 <option value="both">Both</option>
-                             </select>
-                         </div>
-                         <div class="flex justify-center items-center">
-                             <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
-                             <button class="submit" id="modal-submit-button">Submit</button>
-                         </div>
-                     </div>
-                 </div>
-            </form>
-        </div>
-
-        <div id="secondary-modal" class="modal secondary">
-            <div class="h-full flex justify-center items-center">
-                <div class="modal-content">
-                    <h3 class="modal-title">Discard Changes?</h3>
-                    <div class="modal-body">
-                        <p></p>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="flex justify-center items-center">
-                            <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
-                            <button class="submit" id="modal-submit-button">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div> -->
         
     <script src="../../src/js/modal.js"></script>
     <script>
-        document.getElementById('kebab').addEventListener('click', function() { 
+        function showKebab(kebabId) {
             event.stopPropagation();
             document.getElementById('kebab-options').classList.add('active');
             document.getElementById('kebab').style.backgroundColor = "#D9D9D9";
-        });
+        }
 
 
         document.addEventListener('click', function(event) {
@@ -368,38 +322,45 @@
             // Add the values needed to the post edited
             document.getElementById('edit-post-content').value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
             
-            // Add fadein
             openModal('edit-post-modal', 'overlay-2');
         });
 
 
+        function changeTag(buttonId) {
+            if(buttonId == 'create-post-tag-button'){
+                const tag = document.getElementById('create-tag').value;
+            } else{
+                const tag = document.getElementById('edit-tag').value;
+            }
+        }
 
-        // $('#post-tag-button').click(function(){
-        //     const tag = $('#modal-post-tag').val();
-        //     if(tag == "broadcast"){
-        //         // div
-        //         $('#post-tag-button div').removeClass('broadcast');
-        //         $('#post-tag-button div').addClass('global');
-        //         // i
-        //         $('#post-tag-button div i').removeClass('fa-bullhorn');
-        //         $('#post-tag-button div i').addClass('fa-earth-asia');
-        //         // p
-        //         $('#post-tag-button div p').text('Global');
 
-        //         $('#modal-post-tag').val('global');
-        //     } else{
-        //         // div
-        //         $('#post-tag-button div').removeClass('global');
-        //         $('#post-tag-button div').addClass('broadcast');
-        //         // i
-        //         $('#post-tag-button div i').removeClass('fa-earth-asia');
-        //         $('#post-tag-button div i').addClass('fa-bullhorn');
-        //         // p
-        //         $('#post-tag-button div p').text('Broadcast');
+        $('#post-tag-button').click(function(){
+            const tag = $('#modal-post-tag').val();
+            if(tag == "broadcast"){
+                // div
+                $('#post-tag-button div').removeClass('broadcast');
+                $('#post-tag-button div').addClass('global');
+                // i
+                $('#post-tag-button div i').removeClass('fa-bullhorn');
+                $('#post-tag-button div i').addClass('fa-earth-asia');
+                // p
+                $('#post-tag-button div p').text('Global');
 
-        //         $('#modal-post-tag').val('broadcast');
-        //     }
-        // })
+                $('#modal-post-tag').val('global');
+            } else{
+                // div
+                $('#post-tag-button div').removeClass('global');
+                $('#post-tag-button div').addClass('broadcast');
+                // i
+                $('#post-tag-button div i').removeClass('fa-earth-asia');
+                $('#post-tag-button div i').addClass('fa-bullhorn');
+                // p
+                $('#post-tag-button div p').text('Broadcast');
+
+                $('#modal-post-tag').val('broadcast');
+            }
+        })
 
         // document.addEventListener('DOMContentLoaded', function () {
         //     const button = document.querySelector('#emoji-button');
@@ -445,57 +406,79 @@
 
         function toClose(modalId, overlayId){
             var isValid = true;
-            let title, content, photo, file;
+            var title, content, photo, file, formId;
 
             if(modalId == 'create-post-modal'){
                 title = document.getElementById('create-post-title').value;
                 content = document.getElementById('create-post-content').value;
                 photo = document.getElementById('create-post-photo').value;
                 file = document.getElementById('create-post-file').value;
+                formId= 'create-post-form';
             } else{
                 title = document.getElementById('edit-post-title').value;
                 content = document.getElementById('edit-post-content').value;
                 photo = document.getElementById('edit-post-photo').value;
                 file = document.getElementById('edit-post-file').value;
+                formId= 'edit-post-form';
             }
 
-            // console.log("title:" + title);
-            // console.log("content:" + content);
-            // console.log("photo:" + photo);
-            // console.log("file:"+ file);
-
+            console.log("title:" + title);
+            console.log("content:" + content);
+            console.log("photo:" + photo);
+            console.log("file:"+ file);
+            console.log("tag:" + document.getElementById('create-post-tag').value);
+            console.log("option:" + document.getElementById('create-post-select').value);
 
             if(title != '' || content != '' || photo != '' || file != ''){
                 openModal('discard-changes-modal', 'overlay-3');
+                document.getElementById('discard-changes-modal').setAttribute('data-modal', modalId);
                 isValid = false;
             }
 
-
             if(isValid){
-                document.getElementById('create-post-title').value = "";
-                document.getElementById('create-post-content').value = "";
-                document.getElementById('create-post-photo').value = "";
-                document.getElementById('create-post-file').value = "";
-                document.getElementById('edit-post-title').value = "";
-                document.getElementById('edit-post-content').value = "";
-                document.getElementById('edit-post-photo').value = "";
-                document.getElementById('edit-post-file').value = "";
-
-                // reset tag
-                // document.getElementById('post-tag').value = 'global';
-                // $('#post-tag-button div').removeClass('global');
-                // $('#post-tag-button div i').removeClass('fa-earth-asia');
-                // $('#post-tag-button div').addClass('broadcast');
-                // $('#post-tag-button div i').addClass('fa-bullhorn');
-                // $('#post-tag-button div p').text('Broadcast');
-
-                // Add fade out transition for modal
+                resetForm(formId);
                 closeModal(modalId, overlayId);
+            }
+        }
 
-                // console.log("close title:" + document.getElementById('create-post-title').value);
-                // console.log("close content:" + document.getElementById('create-post-content').value);
-                // console.log("close photo:" + document.getElementById('create-post-photo').value);
-                // console.log("close file:"+ document.getElementById('create-post-file').value);
+        function resetForm(formId) {            
+            document.getElementById(formId).reset();
+
+            // reset tag
+            // document.getElementById('post-tag').value = 'global';
+            // $('#post-tag-button div').removeClass('global');
+            // $('#post-tag-button div i').removeClass('fa-earth-asia');
+            // $('#post-tag-button div').addClass('broadcast');
+            // $('#post-tag-button div i').addClass('fa-bullhorn');
+            // $('#post-tag-button div p').text('Broadcast');
+
+            
+            if(formId == 'create-post-form'){
+                console.log("close title:" + document.getElementById('create-post-title').value);
+                console.log("close content:" + document.getElementById('create-post-content').value);
+                console.log("close photo:" + document.getElementById('create-post-photo').value);
+                console.log("close file:"+ document.getElementById('create-post-file').value);
+                console.log("close tag:" + document.getElementById('create-post-tag').value);
+                console.log("close option:" + document.getElementById('create-post-select').value);
+            } else{
+                console.log("close title:" + document.getElementById('edit-post-title').value);
+                console.log("close content:" + document.getElementById('edit-post-content').value);
+                console.log("close photo:" + document.getElementById('edit-post-photo').value);
+                console.log("close file:"+ document.getElementById('edit-post-file').value);
+                console.log("close tag:" + document.getElementById('edit-post-tag').value);
+                console.log("close option:" + document.getElementById('edit-post-select').value);
+            }
+        }
+
+        function discardChanges() {
+            closeSecondaryModal('discard-changes-modal', 'overlay-3');
+            var dataModalValue = document.getElementById('discard-changes-modal').getAttribute('data-modal');
+            if(dataModalValue == 'create-post-modal'){
+                closeModal(dataModalValue, 'overlay-1');
+                resetForm('create-post-form');
+            } else{
+                closeModal(dataModalValue, 'overlay-2');
+                resetForm('edit-post-form');
             }
         }
     </script>

@@ -20,6 +20,17 @@ function closeModal(modalId, overlayId) {
     }, 200);
 }
 
+function closeSecondaryModal(modalId, overlayId){
+    document.getElementById(modalId).style.opacity = '0';
+    document.getElementById(overlayId).style.opacity = '0'; 
+    setTimeout(() =>{  
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementById(overlayId).style.display = 'none';
+    }, 200);
+}
+
+
+// UNUSED
 function closeOpenModal(modalId, overlayId) {
     document.getElementById(modalId).style.display = 'none';
     document.getElementById(overlayId).style.display = 'none';

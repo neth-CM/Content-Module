@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf),
-         url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+    src: url(../fonts/OpenSans-VariableFont_wdth-wght.ttf),
+         url(../fonts/OpenSans-Italic-VariableFont_wdth-wght.ttf);
 }
 
 *{
@@ -25,17 +25,17 @@ body{
 }
 
 
+
 /*----------------------------------------*/
-/*-------------- Containers --------------*/
+/*------------- Backgrounds --------------*/
 /*----------------------------------------*/
 
-/* .background{
-    background-image: url(../../src/pictures/background3.png),
-                      url(../../src/pictures/background1.png);
-    background-repeat: no-repeat, repeat;
-    background-image: url(../../src/pictures/background1.png);
-    -516px
-}  */
+.bg_1 {
+    position: relative;
+    background-image: url(../pictures/bg_1.png);
+    background-size: cover;
+    background-position: center;
+}
 
 .bg_2 {
     position: relative;
@@ -50,10 +50,29 @@ body{
 .bg_2::after {
     position: absolute;
     top: -516px;
-    background: url(../../src/pictures/background1.png);
+    background: url(../pictures/bg_2.png);
     content: '';
     width: 100%;
     height: calc(100% + 516px);
     z-index: 1;
 }
 
+
+
+/*----------------------------------------*/
+/*---------------- Modal -----------------*/
+/*----------------------------------------*/
+
+.hidden{
+    transition: opacity 0.3s ease-in;
+}
+
+
+
+/*----------------------------------------*/
+/*--------------- Inputs -----------------*/
+/*----------------------------------------*/
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+    display: none;
+}
