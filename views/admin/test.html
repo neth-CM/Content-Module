@@ -2,13 +2,16 @@
 <html>
   <head>
     <title>Emoji Test</title>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
     <!-- <script src="../../src/js/emoji-button.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script> -->
+
+    <link href="../../src/css/tailwind/style.css" rel="stylesheet">
+        <link href="../../src/css/style.css" rel="stylesheet">
     
   </head>
-  <body>
-    <nav class="navbar">
+  <body >
+    <!-- <nav class="navbar">
         <a href="../index.html">Go Back</a>
     </nav>
     <h1>Emoji Button</h1>
@@ -28,6 +31,145 @@
           document.querySelector('input').value += emoji;
         });
       });
+    </script> -->
+<!-- Repeat this block for each kebab menu -->
+<div class="flex w-full justify-center items-center gap-x-40">
+  <!-- Repeat this block for each kebab menu -->
+<div class="relative inline-block text-left">
+  <button class="kebabButton inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      <!-- Kebab icon -->
+      <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M3 10a2 2 0 114 0 2 2 0 01-4 0zM10 18a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M17 10a2 2 0 114 0 2 2 0 01-4 0zM3 6a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+      </svg>
+  </button>
+
+  <div class="kebabDropdown hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" tabindex="-1">
+      <div class="py-1" role="none">
+          <!-- Dropdown items -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 1</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 2</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 3</a>
+      </div>
+  </div>
+</div>
+<!-- Repeat this block for each kebab menu -->
+<div class="relative inline-block text-left">
+  <button class="kebabButton inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      <!-- Kebab icon -->
+      <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M3 10a2 2 0 114 0 2 2 0 01-4 0zM10 18a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M17 10a2 2 0 114 0 2 2 0 01-4 0zM3 6a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+      </svg>
+  </button>
+
+  <div class="kebabDropdown hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" tabindex="-1">
+      <div class="py-1" role="none">
+          <!-- Dropdown items -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 1</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 2</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 3</a>
+      </div>
+  </div>
+</div>
+<!-- Repeat this block for each kebab menu -->
+<div class="relative inline-block text-left">
+  <button class="kebabButton inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      <!-- Kebab icon -->
+      <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M3 10a2 2 0 114 0 2 2 0 01-4 0zM10 18a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M17 10a2 2 0 114 0 2 2 0 01-4 0zM3 6a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+      </svg>
+  </button>
+
+  <div class="kebabDropdown hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" tabindex="-1">
+      <div class="py-1" role="none">
+          <!-- Dropdown items -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 1</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 2</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 3</a>
+      </div>
+  </div>
+</div>
+<!-- Repeat this block for each kebab menu -->
+<div class="relative inline-block text-left">
+  <button class="kebabButton inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+      <!-- Kebab icon -->
+      <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M3 10a2 2 0 114 0 2 2 0 01-4 0zM10 18a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M17 10a2 2 0 114 0 2 2 0 01-4 0zM3 6a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+      </svg>
+  </button>
+
+  <div class="kebabDropdown hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" tabindex="-1">
+      <div class="py-1" role="none">
+          <!-- Dropdown items -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 1</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 2</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Item 3</a>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+  
+    <script>
+      // // Get all kebab buttons and dropdowns
+      // const kebabButtons = document.querySelectorAll('.kebabButton');
+      // const kebabDropdowns = document.querySelectorAll('.kebabDropdown');
+
+      // // Add event listeners to each kebab button to toggle dropdown visibility
+      // kebabButtons.forEach((button, index) => {
+      //     button.addEventListener('click', function (event) {
+      //         event.stopPropagation();
+      //         kebabDropdowns[index].classList.toggle('hidden');
+      //     });
+      // });
+
+      // // Add event listener to document to close kebab dropdowns when clicking outside of them
+      // document.addEventListener('click', function (event) {
+      //     kebabDropdowns.forEach((dropdown) => {
+      //         // Check if the click target is not inside the kebab dropdown
+      //         if (!dropdown.contains(event.target)) {
+      //             // Hide the kebab dropdown
+      //             dropdown.classList.add('hidden');
+      //         }
+      //     });
+      // });
+
+      const kebabButtons = document.querySelectorAll('.kebabButton');
+      const kebabDropdowns = document.querySelectorAll('.kebabDropdown');
+
+      // Add event listeners to each kebab button to toggle dropdown visibility
+      kebabButtons.forEach((button, index) => {
+        button.addEventListener('click', function (event) {
+          event.stopPropagation();
+          // Close all dropdowns first
+          kebabDropdowns.forEach(dropdown => {
+            dropdown.classList.add('hidden');
+          });
+          // Then toggle the visibility of the current dropdown
+          kebabDropdowns[index].classList.toggle('hidden');
+        });
+      });
+
+      // Add event listener to document to close kebab dropdowns when clicking outside of them
+      document.addEventListener('click', function (event) {
+        kebabDropdowns.forEach((dropdown) => {
+          // Check if the click target is not inside the kebab dropdown
+          if (!dropdown.contains(event.target)) {
+            // Hide the kebab dropdown
+            dropdown.classList.add('hidden');
+          }
+        });
+      });
+
     </script>
   </body>
 </html>
